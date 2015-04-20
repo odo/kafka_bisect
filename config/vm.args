@@ -1,0 +1,2 @@
+-env ERL_MAX_PORTS 4096
++A 64

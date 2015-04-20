@@ -1,0 +1,22 @@
+#!/bin/sh
+APP_DIR=`pwd`
+CONFIG_FILE="config/default.config"
+
+# shift around so we have the argument in $1
+shift $(( OPTIND - 1 ));
+
+## Check the first argument for instructions
+case "$1" in
+    run)
+        erl -pa $APP_DIR/deps/*/ebin $APP_DIR/ebin \
+            -args_file $APP_DIR/config/vm.args \
+            -s kafka_bisect_kafka find_all $2 $3 $4\
+            -config $CONFIG_FILE
+        ;;
+    *)
+        echo "Unknown command: $1"
+        ;;
+    esac
+
+exit 0
+
