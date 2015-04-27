@@ -1,7 +1,7 @@
 kafka_bisect
 ============
 
-kafak_bisect is a tool to search for timestamps in kafka messages. It assumes the following message format:
+kafak_bisect is a tool to search for timestamps in kafka 0.6 messages. It assumes the following message format:
 
 `{IP} {TIMESTAMP} {MESSAGE}`
 
